@@ -231,6 +231,13 @@ class BookLoanController extends Controller
 
     public function returnBook(BookLoan $bookLoan)
     {
+        // foreach ($bookLoan->bookLoanDetails as $bookLoanDetail) {
+        //     dd($bookLoanDetail);
+        //     $book = $bookLoanDetail->book;
+        //     $book->update([
+        //         'amount' => $amountEdit - $bookLoanDetail->quantity,
+        //     ]);
+        // }
         $bookLoan->update(['status' => 3]);
         return redirect()->route('book_loans.index')->with('alert-success', 'Trả sách thành công!');
     }
