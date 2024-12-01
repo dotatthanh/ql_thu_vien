@@ -1,0 +1,593 @@
+$xanhla: #0bdb7d;
+$xanhbien: #00aeef;
+$do: #f4556c;
+$trang: #ffffff;
+$den: #000000;
+$vang: #ffde3c;
+$b: 'SVNB';
+@media(max-width:1199px){
+	/*Index*/
+	.transport .menu-transport ul {
+	    max-width: 660px;
+	}
+	header .header-menu .menu ul li a {
+	    margin: 13px 15px 0 16px;
+	}
+	.transport .menu-transport ul li {
+	    padding: 0 6px;
+	}
+	.transport .item-transport .text-transport {
+	    max-width: 138px;
+	}
+	/*Sách nổi bật*/
+	.book-highlight .book-hl {
+	    padding-bottom: 40px;
+	}
+	.cate-book-selling .filter .slider-filter .ui-widget.ui-widget-content {
+	    max-width: 225px;
+	}
+	.cate-book-selling .filter h4:after {
+	    left: 55%;
+	}
+	/*Danh mục sách*/
+	.cate-book .cate-books .book .vote {
+	    padding-top: 0;
+	    float: none;
+	}
+	/*Danh mục sách chi tiết*/
+	.cate-book-detail .info-product {
+	    max-width: 292px;
+	}
+	/*Shop cart*/
+	.modal .modal-lg {
+	    max-width: 900px;
+	}
+	.modal .modal-lg .modal-content .shop-cart .pay .form-info form .ho, .modal .modal-lg .modal-content .shop-cart .pay .form-info form .ten, .modal .modal-lg .modal-content .shop-cart .pay .form-info form .email, .modal .modal-lg .modal-content .shop-cart .pay .form-info form .sdt {
+	    max-width: 180px;
+	}
+	.modal .modal-lg .modal-content .shop-cart .cart table tr .title-col-product {
+	    min-width: 152px;
+	}
+	.modal .modal-lg .modal-content .shop-cart .cart table tr td .info-book {
+	    padding-left: 15px;
+	}
+	.modal .modal-lg .modal-content .shop-cart .cart table tr .title-col-sl {
+	    min-width: 115px;
+	}
+}
+@media(max-width:991px){
+	/*Index*/
+	.transport .menu-transport ul {
+	    max-width: 100%;
+	}
+	.book-highlights {
+	    margin: auto;
+	}
+	header .brand {
+	    display: none;
+	}
+	.book-highlight .book-hl {
+	    padding-bottom: 35px;
+	}
+	.menu ul{
+		display: none;
+	}
+	header .header-menu .menu .btn-menu{
+		position: absolute;
+		display: inline-block;
+		color: $trang;
+		border-radius: 100%;
+		width: 40px;
+		height: 40px;
+		background: $xanhla;
+		right: 0;
+		top: -10px;
+		cursor: pointer;
+	}
+		
+	header .search form {
+	    display: none;
+	}
+
+	.menu-mb {
+	    display: none;
+	    position: fixed;
+	    right: 0;
+	    top: 0;
+	    bottom: 0;
+	    width: 300px;
+	    color: $xanhla;
+	    z-index: 999;
+		background: $trang;
+		.search{
+			float: none;
+			form{
+				position: relative;
+				display: inline-block;
+				margin-left: 20px;
+	    		margin-top: 30px;
+
+				input{
+					border: 1px solid $xanhla;
+					min-width: 260px;
+					color: $xanhla;
+					padding-right: 50px;
+					background: $trang;
+				}
+
+				input[type="text"]::-webkit-input-placeholder {
+					color: $xanhla;
+					font-family: 'UTM';
+				}
+
+				a{
+					position: absolute;
+					top: 0;
+					bottom: 0;
+					right: 0;
+					background: $xanhla;
+
+					img{
+						padding: 0 8px;
+					}
+
+				}
+			}
+		}
+
+		.btn-close{
+			color: $trang;
+			width: 40px;
+			height: 40px;
+			background: $den;
+			border-radius: 100%;
+			margin-top: 10px;
+    		margin-left: 250px;
+    		cursor: pointer;
+		}
+		ul{
+			margin-top: 30px;
+			li{
+				position: relative;
+				.btn-drop1{
+					position: absolute;
+					top: 0;
+					right: 0;
+					padding: 12px;
+					background: #ebebeb;
+					cursor: pointer;
+				}
+				a{
+					padding: 7px 20px;
+					display: block;
+					font-family: 'SVNB';
+					font-size: 16px;
+					border-bottom: 1px solid #e1e1e1;
+				}
+				ul{
+					margin-top: 0;
+					display: none;
+
+					&.active1{
+						display: block;
+					}
+					li{
+						a{
+							padding-left: 40px;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.close{
+		display: none;
+	}
+	.open{
+		display: block;
+	}
+	.col20{
+	    -webkit-flex: 0 0 33.33333%;
+		-ms-flex: 0 0 33.33333%;
+		flex: 0 0 33.33333%;
+		max-width: 33.33333%;
+	}
+	.foot .foot-index h3 {
+	    margin-bottom: 10px;
+	}
+	.foot-index:nth-child(3), .foot-index:nth-child(4){
+		margin-top: 20px;
+	}
+	.transport .item-transport img {
+	     margin-right: 0; 
+	}
+	.transport .item-transport .text-transport {
+	    max-width: 100%;
+	    padding-left: 70px;
+	    display: block;
+	}
+	.transport .menu-transport ul li {
+	    padding: 0 20px;
+	}
+
+	/*Liên hệ*/
+	.form{
+		margin-top: 30px;
+	}
+	/*Diễn đàn chi tiết*/
+	.forum-detail .new-book-good img {
+	    display: block;
+	    margin-right: auto;
+	    margin-left: auto;
+	}
+	.new-book-good{
+		padding-bottom: 30px;
+	}
+	/*Diễn đàn*/
+	.news-forum{
+		padding-bottom: 20px;
+	}
+	.forum {
+	    padding-bottom: 0;
+	}
+
+	/*Sách nổi bật*/
+	.cate-book-selling{
+		margin-top: 30px;
+	}
+	.cate-book-selling .filter h4:after {
+	    left: 25%;
+	}
+	.cate-book-selling .filter .slider-filter .ui-widget.ui-widget-content {
+	    max-width: 320px;
+	}
+	/*Danh mục sách*/
+	.cate-book .cate-books .pad10{
+		margin: auto;
+	}
+	.cate-book .cate-books .book .vote {
+	    padding-top: 10px;
+	    float: right;
+	}
+	.cate-book-detail .cart-cate-book-detail {
+	    padding-bottom: 30px;
+	    margin-top: 30px;
+	    width: 100%;
+	}
+	/*Shop cart*/
+	.modal .modal-lg .modal-content .shop-cart .pay .form-info form .ho, .modal .modal-lg .modal-content .shop-cart .pay .form-info form .ten, .modal .modal-lg .modal-content .shop-cart .pay .form-info form .email, .modal .modal-lg .modal-content .shop-cart .pay .form-info form .sdt {
+	    max-width: 145px;
+	}
+	/*.close {
+	     display: block; 
+	}*/
+	.modal .modal-lg .modal-content .shop-cart .cart table tr .content-pay .tamtinh {
+	    padding: 30px 0px;
+	}
+	.modal .modal-lg .modal-content .shop-cart .cart table tr .content-pay .thanhtien {
+	    padding-right: 0; 
+	    padding-left: 0; 
+	}
+	.modal .modal-lg .modal-content .shop-cart .cart table tr .content-pay span {
+	    float: none;
+	}
+	.modal .modal-lg .modal-content .shop-cart .cart .action a:nth-child(2){
+		padding-left: 25px;
+	}
+	.modal .modal-lg .modal-content .shop-cart .cart .action a:nth-child(1) {
+	    padding-right: 25px;
+	}
+	.modal .modal-lg .modal-content .shop-cart .pay .nav-tabs .nav-item .nav-link {
+	    padding-right: 50px;
+	}
+
+	
+}
+@media(max-width:767px){
+	.btn-call{
+		top: auto;
+		bottom: 20px;
+	}
+	.transport .menu-transport .brand-transport {
+	    margin-top: 10px;
+	}
+	/*Index*/
+	.col20{
+	    -webkit-flex: 0 0 50%;
+		-ms-flex: 0 0 50%;
+		flex: 0 0 50%;
+		max-width: 50%;
+	}
+	.transport .menu-transport ul li {
+	    padding: 0 35px;
+	}
+	header .search form input {
+	    min-width: auto;
+	}
+	header .brand a {
+	    margin-right: 5px;
+	}
+	.category-book .flex{
+		max-width: 300px;
+    	margin: 0 auto;
+	}
+	.category-book .flex:nth-child(3){
+		margin-top: 20px;
+	}
+	.book-highlights{
+		margin: auto;
+	}
+	.slider .prev, .slider .next {
+	    font-size: 21px;
+	    padding: 0px 12px;
+	}
+	.btn-call span {
+	    font-size: 20px;
+	    width: 40px;
+	    height: 40px;
+	    line-height: 44px;
+	}
+	.category-book .book-item {
+	    padding: 15px 0;
+	}
+	.category-book img {
+	    margin-top: 20px;
+	}
+	.book-tv .book .book-info {
+	    margin-top: 15px;
+	}
+	/*Sách nổi bật*/
+	.book-noibat .title-book-noibat form {
+	    max-width: 230px;
+	}
+	.book-noibat .all-featured-books .featured-books .star-hl {
+	    font-size: 15px;
+	    line-height: 50px;
+	    background-size: contain;
+	    width: 53px;
+	    margin-right: 10px;
+	}
+	.book-noibat .all-featured-books .featured-books .featured-book .img-book-hl {
+	    margin-right: 10px;
+	}
+	.book-noibat .all-featured-books .featured-books .buy-now {
+	    padding: 7px 15px;
+	}
+	.cate-book-selling .filter h4:after {
+	    left: 35%;
+	}
+
+	/*Danh mục sách*/
+	.title-book-highlights form {
+	    max-width: 230px;
+	}
+	/*Danh mục sách chi tiết*/
+	.cate-book-detail .product-detail .slider-cate-book-detail {
+	    display: block;
+	    max-width: 354px;
+	    margin: auto;
+	}
+	/*Danh mục sách chi tiết*/
+	.cate-book-detail .info-product {
+	    max-width: 470px;
+	}
+	.modal .modal-lg .modal-content .shop-cart .pay .form-info form .ho, .modal .modal-lg .modal-content .shop-cart .pay .form-info form .ten, .modal .modal-lg .modal-content .shop-cart .pay .form-info form .email, .modal .modal-lg .modal-content .shop-cart .pay .form-info form .sdt {
+	    max-width: 215px;
+	}
+	.modal .modal-lg .modal-content .shop-cart .pay .order {
+	    margin-top: 20px;
+	}
+	.modal .modal-lg .modal-content .shop-cart .cart .action a:nth-child(3), .modal .modal-lg .modal-content .shop-cart .cart .action a:nth-child(4) {
+	    padding: 10px 0px;
+	    float: none; 
+	    display: block;
+	    max-width: 200px;
+	    text-align: center;
+	    margin-top: 20px;
+	    margin-left: auto;
+	    margin-right: auto;
+	}
+	.modal .modal-lg .modal-content .shop-cart .cart {
+	    padding-bottom: 30px;
+	}
+	.modal .modal-lg .modal-content .shop-cart .cart table tr .title-col-product {
+	    min-width: 120px;
+	}
+	.modal .modal-lg .modal-content .shop-cart .cart table tr .title-col-price {
+	    min-width: 95px;
+	}
+	.modal .modal-lg .modal-content .shop-cart .cart table tr .content-sl form input {
+	    max-width: 60px;
+	}
+	.modal .modal-lg .modal-content .shop-cart .cart table tr .title-col-sl {
+	    min-width: 75px;
+	}
+	.modal .modal-lg .modal-content .shop-cart .cart table tr .title-col-sale {
+	    min-width: 90px;
+	}
+}
+@media(max-width:575px){
+	/*Index*/
+	.flex:nth-child(2) {
+	    margin-top: 20px;
+	}
+	.book-highlights .all-featured-books .featured-books {
+        max-width: 290px;
+    	margin: auto;
+	}
+	header .search form input {
+	    max-width: 190px;
+	}
+	.transport .menu-transport ul li {
+	    padding: 0 24px;
+	}
+	header .header-menu .menu .btn-menu {
+	    right: 15px;
+	}
+	.slider .prev, .slider .next {
+	    top: 55%;
+	}
+	.book-highlight .book-hl {
+	    margin-top: 30px;
+	    max-width: 330px;
+	    margin-left: auto;
+	    margin-right: auto;
+        padding-bottom: 42px;
+	}
+	.category-book {
+	    padding-top: 40px;
+	}
+	.foot {
+	    padding-top: 25px;
+	    padding-bottom: 30px;
+	}
+	.forum-detail .new-book-good ul {
+	     padding-bottom: 0; 
+	}
+	.forum-detail {
+	    padding-top: 20px;
+	}
+	.forum-detail .new-forum-detail {
+	    padding-bottom: 25px;
+	}
+	/*Diễn đàn*/
+	.forum .news-forum .new-forum {
+	    max-width: 400px;
+	    margin-left: auto;
+	    margin-right: auto;
+	}
+	/*Sách nổi bật*/
+	.cate-book-selling .filter h4:after {
+	    left: 35%;
+	}
+	.book-noibat .all-featured-books .featured-books .star-hl, .book-noibat .all-featured-books .featured-books .featured-book .img-book-hl{
+	    margin: auto;
+	    display: table;
+	}
+	.book-noibat .all-featured-books .featured-books .featured-book {
+	    width: 100%;
+	}
+	.book-noibat .all-featured-books .featured-books .featured-book .book-detail {
+	    width: 100%;
+	}
+	.book-noibat .all-featured-books .featured-books .star-hl, .book-noibat .all-featured-books .featured-books .featured-book .img-book-hl {
+	    margin-top: 10px;
+	}
+	.book-noibat .all-featured-books .featured-books .buy-now {
+	    float: none;
+	    display: block;
+	    text-align: center;
+	    margin-top: 20px;
+	}
+	.cate-book-selling .filter .slider-filter .ui-widget.ui-widget-content {
+	    max-width: 200px;
+	}
+	/*Sách nổi bật*/
+	.cate-book .cate-books .pad10 {
+	    max-width: 300px;
+	}
+	.cate-book-detail .info-product {
+	    max-width: 504px;
+	}
+	.modal .modal-lg .modal-content .shop-cart .pay .form-info form .ho, .modal .modal-lg .modal-content .shop-cart .pay .form-info form .ten, .modal .modal-lg .modal-content .shop-cart .pay .form-info form .email, .modal .modal-lg .modal-content .shop-cart .pay .form-info form .sdt {
+	    max-width: 100%;
+	}
+	.modal .modal-lg .modal-content .shop-cart .pay .nav-tabs .nav-item .nav-link {
+	    padding-right: 0px;
+	}
+	.modal .modal-lg .modal-content .shop-cart .cart table tr th {
+	    display: none;
+	}
+	.modal .modal-lg .modal-content .shop-cart .cart td {
+		display: block;
+		text-align: right!important;
+		padding: 10px;
+	}
+	.modal .modal-lg .modal-content .shop-cart .cart td:before {
+		content: attr(data-content);
+	    float: left;
+	    font-family: 'SVNB';
+	}
+	.modal .modal-lg .modal-content .shop-cart .cart table tr td .info-book {
+	    padding-right: 0;
+	    padding-left: 0;
+	}
+	.modal .modal-lg .modal-content .shop-cart .cart table{
+	    width: 100%;
+	}
+	.modal .modal-lg .modal-content .shop-cart .cart table tr td img {
+	    padding: 0;
+	}
+}
+@media(max-width:480px){
+	/*Index*/
+	.col20{
+	    -webkit-flex: 0 0 100%;
+		-ms-flex: 0 0 100%;
+		flex: 0 0 100%;
+		max-width: 300px;
+	    margin-left: auto;
+    	margin-right: auto;
+	}
+	.transport .menu-transport ul li {
+	    display: block;
+	}
+	.transport .menu-transport ul li:nth-child(1) {
+	    padding-left: 24px;
+	}
+	.transport .menu-transport ul li:nth-child(1):after {
+	    display: block;
+	}
+	.foot-index {
+	    min-width: 245px;
+	    margin:auto;
+	}
+	.transport .menu-transport .brand-transport {
+	    display: block;
+	    float: none;
+        margin-top: 20px;
+    	margin-bottom: 20px;
+	}
+	.foot-index:nth-child(2) {
+	    margin-top: 20px;
+	}
+	/*Danh mục sách*/
+	.title-book-highlights form {
+	    float: none;
+	    margin: auto;
+	    margin-top: 20px;
+	}
+	.cate-book-selling .filter h4:after {
+	    left: 55%;
+	}
+	/*Danh mục sách chi tiết*/
+	.cate-book-detail .product-detail .slider-cate-book-detail .slider-nav,.cate-book-detail .product-detail .slider-cate-book-detail .slider-nav .slick-slide {
+	    width: 60px !important;
+	}
+	.cate-book-detail .product-detail .slider-cate-book-detail .slider-nav, .cate-book-detail .product-detail .slider-cate-book-detail .slider-for {
+	    margin-left: 5px;
+	}
+	.cate-book-detail .product-detail .slider-cate-book-detail .slider-nav .slick-slide {
+	    margin-bottom: 30px;
+	}
+	.cate-book-detail .nav-tabs .nav-item {
+	    display: flex;
+	}
+
+	.modal .modal-lg .modal-content .shop-cart .pay .nav-tabs .nav-item .nav-link {
+	    padding-right: 0px;
+	}
+	.modal .modal-lg .modal-content .shop-cart .pay .nav-tabs .nav-item {
+	    display: flex;
+	}
+	.modal .modal-lg .modal-content .shop-cart .pay .order .cost span {
+	    margin-right: 10px;
+	}
+	.modal .modal-lg .modal-content .shop-cart .pay .order .pay-methods span {
+	    margin-right: 10px;
+	}
+	.foot-index {
+	    margin: 0;
+	}
+}

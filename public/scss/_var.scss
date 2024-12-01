@@ -1,0 +1,303 @@
+@font-face {
+	font-family: 'Roboto';
+	src: url('../fonts/Roboto-Regular.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'Gilroy-light';
+	src: url('../fonts/SVN-Gilroy-Light.otf') format('truetype');
+}
+@font-face {
+	font-family: 'Gilroy-bold';
+	src: url('../fonts/SVN-Gilroy-Bold.otf') format('truetype');
+}
+@font-face {
+	font-family: 'RobotoR';
+	src: url('../fonts/RobotoCondensed-Regular.ttf') format('truetype');
+	font-weight: bold;
+}
+@font-face {
+	font-family: 'UTM-Akashi';
+	src: url('../fonts/UTM-Akashi.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'Berkshire-Swash';
+	src: url('../fonts/SVN-Berkshire-Swash.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'UTM-A&S-Graceland';
+	src: url('../fonts/UTM-A&S-Graceland.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'SVN';
+  src: url("../fonts/SVN-Gilroy Light.otf") format("truetype"); }
+@font-face {
+  font-family: 'SVNB';
+  src: url("../fonts/SVN-Gilroy Bold.otf") format("truetype"); 
+}
+@font-face {
+	font-family: 'RobotoB';
+	src: url('../fonts/Roboto-Bold.ttf') format('truetype');
+	font-weight: bold;
+}
+@font-face {
+	font-family: 'UVNKIEU';
+	src: url('../fonts/UVNKIEU_R_1.TTF') format('truetype');
+}
+@font-face {
+	font-family: 'UVNKIEU';
+	src: url('../fonts/UVNKIEU_0.TTF') format('truetype');
+	font-weight: bold;
+}
+@font-face {
+	font-family: 'UTM_GRA';
+	src: url('../fonts/UTM A&S Graceland.ttf') format('truetype');
+	font-weight: bold;
+}
+@font-face {
+  font-family: 'UTM';
+  src: url("../fonts/UTM Avo.ttf") format("truetype"); }
+@font-face {
+  font-family: 'UTMB';
+  src: url("../fonts/UTM AvoBold.ttf") format("truetype"); 
+}
+@font-face {
+  font-family: 'RCB';
+  src: url("../fonts/RobotoCondensed-Bold.ttf") format("truetype"); }
+@font-face {
+  font-family: 'RC';
+  src: url("../fonts/RobotoCondensed-Regular.ttf") format("truetype"); 
+}
+$utm_grace: 'UTM-A&S-Graceland';
+$font_def: 'Roboto';
+$font_2nd: 'UVNKIEU';
+$font_reset: 'Arial';
+$gb:'Gilroy-bold';
+$gl: 'Gilroy-light';
+$color_def: #ffb628;
+$color_green: #79c447;
+$color_red: #ff5454;
+$color_text: #333;
+$color_white: #fff;
+$c_xanh: #126c38; 
+$c_vang:#f6c61a; 
+$c_cam:#ffae00; 
+$xanh_1: #0bdb7d; 
+$hong_1: #f4556c;
+$cam1: #e49f05;
+$cam2:#ac5500;
+
+
+
+
+
+
+$f20: 20%;
+.col-xs-f20,.col-sm-f20,.col-md-f20,.col-lg-f20{
+	@extend %col_bs;
+}
+.col-xs-f20 {@include col_bs($f20)}
+@media (min-width: 768px) {
+	.col-sm-f20 {@include col_bs($f20)}
+}
+@media (min-width: 992px) {
+	.col-md-f20 {@include col_bs($f20)}
+}
+@media (min-width: 1200px) {
+	.col-lg-f20 {@include col_bs($f20)}
+}
+
+.pad-0{@include pad(0px);}
+.pad-5{@include pad(5px);}
+.pad-8{@include pad(8px);}
+.pad-10{@include pad(10px);}
+.margin-auto{@include mar(auto)}
+.col-mar-0{@include mar(0px)}
+.col-mar-0 > div[class^="col-"]{@include pad(0px);}
+.col-mar-5{@include mar(-5px)}
+.col-mar-5 > div[class^="col-"]{@include pad(5px);}
+.col-mar-8{@include mar(-8px)}
+.col-mar-8 > div[class^="col-"]{@include pad(8px);}
+.col-mar-10{@include mar(-10px)}
+.col-mar-10 > div[class^="col-"]{@include pad(10px);}
+
+.delay02{@include animation_delay(0.2s);}
+.delay04{@include animation_delay(0.4s);}
+.delay06{@include animation_delay(0.6s);}
+
+
+.c-img{
+	display: block;
+	position: relative;
+	padding-top: 100%;
+	img, .bg{
+		@include absolute(0);
+		display: block;
+		width: 100%;
+		height: 100%;
+		border-radius: inherit;
+	}
+}
+%img-center{
+	@include absolute(0);
+	max-width: 100%;
+	max-height: 100%;
+	width: auto;
+	height: auto;
+	margin: auto;
+}
+.hv-over{
+	display: block;
+	position: relative;
+	&:after{
+		content: '';
+		@include absolute(0);
+		border-radius: inherit;
+		pointer-events: none;
+		@include smooth(0.3s);
+	}
+	&:hover:after{
+		background: rgba($color_def, 0.4);
+	}
+}
+.hv-scale{
+	overflow: hidden;
+	display: block;
+	img{
+		@include smooth(0.3s);
+	}
+	&:hover img{
+		@include scale(1.1);
+	}
+}
+.hv-light{
+	position: relative;
+	overflow: hidden;
+	background: #fff;
+	&:before, &:after{
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 1;
+		pointer-events: none;
+	}
+	&:before{
+		right:0;
+		bottom:0;
+		background: none;
+		@include smooth(0.3s);
+	}
+	&:after{
+		width: 100%;
+		height: 100%;
+		background: rgba(255,255,255,0.3);
+		@include transition(0.75s ease-in-out);
+		@include transform(scale3d(2,1.5,1) rotate3d(0,0,1,45deg) translate3d(0,-100%,0));
+	}
+	&:hover{
+		&:after{
+			@include transform(scale3d(2,1.5,1) rotate3d(0,0,1,45deg) translate3d(0,100%,0));
+		}
+	}
+}
+.bg{
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+.smooth{@include smooth(.2s);}
+
+@media all and (max-width: 1199px){
+	.md-left{text-align: left;}
+	.md-center{text-align: center;}
+	.md-right{text-align: right;}
+}
+@media all and (max-width: 991px){
+	.sm-left{text-align: left;}
+	.sm-center{text-align: center;}
+	.sm-right{text-align: right;}
+}
+@media all and (max-width: 767px){
+	.xs-left{text-align: left;}
+	.xs-center{text-align: center;}
+	.xs-right{text-align: right;}
+}
+.table{
+	display: table;
+	margin: 0;
+	.line{
+		display: table-row;
+	}
+	.cell{
+		display: table-cell;
+	}
+}
+
+.s-content{
+	ol{
+		list-style: decimal;
+		margin-left: 15px;
+		margin-bottom: 10px;
+	}
+	ul{
+		list-style: initial;
+		margin-left: 15px;
+		margin-bottom: 10px;
+	}
+	li{
+		list-style: inherit;
+		margin-bottom: 5px;
+	}
+	p{
+		margin-bottom: 10px
+	}
+	img{
+		display: block;
+		max-width: 100%;
+		margin: 10px auto;
+		width: auto !important;
+		height: auto !important;
+	}
+	table, iframe{
+		max-width: 100%;
+	}
+}
+.s-social{
+	.fb_iframe_widget, a.pinterest{
+		@include top;
+		margin-top: -1px;
+	}
+}
+.col-xs-15,
+.col-sm-15,
+.col-md-15,
+.col-lg-15 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.col-xs-15 {
+    width: 20%;
+    float: left;
+}
+@media (min-width: 768px) {
+    .col-sm-15 {
+        width: 20%;
+        float: left;
+    }
+}
+@media (min-width: 992px) {
+    .col-md-15 {
+        width: 20%;
+        float: left;
+    }
+}
+@media (min-width: 1200px) {
+    .col-lg-15 {
+        width: 20%;
+        float: left;
+    }
+}
+
