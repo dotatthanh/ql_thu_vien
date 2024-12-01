@@ -165,8 +165,16 @@ class BookLoanController extends Controller
 
             foreach ($request->book_loans as $item) {
                 $book = Book::findOrFail($item['book_id']);
-                if ($item['id']) {
+                if (isset($item['id'])) {
                     $bookLoanDetail = BookLoanDetail::find($item['id']);
+                    if ($item['book_id'] == $bookLoanDetail->book_id) {
+                        $amountEdit = $book->amount + $bookLoanDetail->quantity;
+                    }
+                    else {
+                        $amountEdit = $book->amount;
+                        $bookOld = $bookLoanDetail->book;
+                        $bookOld->update(['amount' => $bookOld->amount + $bookLoanDetail->quantity]);
+                    }
                     $bookLoanDetail->update([
                         'book_id' => $item['book_id'],
                         'quantity' => $item['quantity'],
@@ -175,7 +183,6 @@ class BookLoanController extends Controller
                         'total_money' => $item['quantity'] * $book->price * $daysDifference,
                         'discount' => $item['quantity'] * $book->price  * $daysDifference * $book->sale / 100,
                     ]);
-                    $amountEdit = $book->amount + $bookLoanDetail->quantity;
                 } else {
                     BookLoanDetail::create([
                         'book_loan_id' => $bookLoan->id,
@@ -231,15 +238,22 @@ class BookLoanController extends Controller
 
     public function returnBook(BookLoan $bookLoan)
     {
-        // foreach ($bookLoan->bookLoanDetails as $bookLoanDetail) {
-        //     dd($bookLoanDetail);
-        //     $book = $bookLoanDetail->book;
-        //     $book->update([
-        //         'amount' => $amountEdit - $bookLoanDetail->quantity,
-        //     ]);
-        // }
-        $bookLoan->update(['status' => 3]);
-        return redirect()->route('book_loans.index')->with('alert-success', 'Trả sách thành công!');
+        DB::beginTransaction();
+        try {
+            foreach ($bookLoan->bookLoanDetails as $bookLoanDetail) {
+                $book = $bookLoanDetail->book;
+                $book->update([
+                    'amount' => $book->amount + $bookLoanDetail->quantity,
+                ]);
+            }
+            $bookLoan->update(['status' => 3]);
+
+            DB::commit();
+            return redirect()->route('book_loans.index')->with('alert-success', 'Trả sách thành công!');
+        } catch (Exception $e) {
+            DB::rollBack();
+            return redirect()->back()->with('alert-error', 'Trả sách thất bại!');
+        }
     }
 
     public function approve(BookLoan $bookLoan)

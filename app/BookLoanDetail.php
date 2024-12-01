@@ -15,4 +15,8 @@ class BookLoanDetail extends Model
         'discount',
         'total_money',
     ];
+
+    public function book(){
+    	return $this->belongsTo(Book::class);
+    }
 }
