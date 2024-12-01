@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 use App\Http\Requests\CustomerRequest;
 use App\Customer;
 use Exception;
+use App\Http\Requests\RegisterRequest;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Hash;
 
 class CustomerController extends Controller
 {
@@ -58,5 +62,41 @@ class CustomerController extends Controller
         auth()->guard('customer')->logout();
 
         return redirect()->route('pages.index');
+    }
+
+    public function create() {
+        $data = [
+            'title' => "Thêm khách hàng",
+        ];
+        return view('admin.customer.create', $data);
+    }
+
+    public function store(RegisterRequest $request) {
+        $params = $request->all();
+        DB::beginTransaction();
+
+        $created = Customer::create([
+            'name' => $params['name'],
+            'sex' => $params['sex'],
+            'birthday' => $params['birthday'],
+            'phone' => $params['phone'],
+            'address' => $params['address'],
+            'email' => $params['email'],
+            'remember_token' => Str::random(60),
+            'password' => Hash::make($params['password']),
+            'code' => 0
+        ]);
+
+        $created->update([
+            'code' => 'KH'.$created->id
+        ]);
+
+        if ($created) {
+            DB::commit();
+            return redirect()->route('admin.customer.index')->with('alert-success', 'Thêm khách hàng thành công');
+        } else {
+            DB::rollback();
+            return redirect()->back()->with('alert-error', 'Thêm khách hàng thất bại');
+        }
     }
 }

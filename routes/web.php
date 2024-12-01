@@ -46,8 +46,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'],function(){
 		Route::get('/edit/{id}', 'CustomerController@edit')->name('admin.customer.edit');
 		Route::post('/edit/{id}', 'CustomerController@update')->name('admin.customer.update');
 		Route::get('/destroy/{id}', 'CustomerController@destroy')->name('admin.customer.destroy');
-		// Route::get('/add', 'CustomerController@create')->name('pages.customer.create');
-		// Route::post('/add', 'CustomerController@store')->name('pages.customer.store');
+		Route::get('/create', 'CustomerController@create')->name('admin.customer.create');
+		Route::post('/store', 'CustomerController@store')->name('admin.customer.store');
 	});
 
 	// Vai trò

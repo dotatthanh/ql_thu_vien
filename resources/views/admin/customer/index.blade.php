@@ -6,6 +6,7 @@
     </div>
 
     <div class="container mt-5">
+        <a href="{{ route('admin.customer.create') }}" class="btn btn-success">Thêm khách hàng</a>
         <form action="{{ route('admin.customer.index') }}" method="GET" class="row mt-3">
             <div class="col-3">
                 <input type="text" name="key" placeholder="Tên khách hàng" class="form-control w-100" value="{{ request()->key }}">
