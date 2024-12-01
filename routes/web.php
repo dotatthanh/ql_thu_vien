@@ -23,11 +23,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'],function(){
 	// Route::get('sales-orders-detail/{id}', 'OrderController@salesOrdersDetail')->name('orders.sales-orders-detail');
 	// Route::post('change-status-order/{id}', 'OrderController@changeStatusOrder')->name('orders.change-status-order');
 	
-	// Route::group(['prefix' => 'statistic'], function(){
-	// 	Route::get('book', 'StatisticController@bookStatistic')->name('book-statistic');
-	// 	Route::get('staff-revenue', 'StatisticController@staffRevenue')->name('staff-revenue');
-	// 	Route::get('book-sold', 'StatisticController@bookSoldStatistic')->name('book-sold');
-	// });
+	Route::group(['prefix' => 'statistic'], function(){
+		Route::get('book', 'StatisticController@bookStatistic')->name('book-statistic');
+	});
 	// Thành viên
 	Route::group(['prefix' => 'member'], function(){
 		Route::get('/', 'MemberController@index')->name('admin.member.index');
@@ -67,8 +65,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'],function(){
 	// Quyền hạn
 	Route::group(['prefix' => 'permission'], function(){
 		Route::get('/', 'PermissionController@index')->name('admin.permission.index');
-		Route::get('/create', 'PermissionController@create')->name('admin.permission.create');
-		Route::post('/store', 'PermissionController@store')->name('admin.permission.store');
+		// Route::get('/create', 'PermissionController@create')->name('admin.permission.create');
+		// Route::post('/store', 'PermissionController@store')->name('admin.permission.store');
 
 		Route::get('/edit/{id}', 'PermissionController@edit')->name('admin.permission.edit');
 		Route::post('/edit/{id}', 'PermissionController@update')->name('admin.permission.update');

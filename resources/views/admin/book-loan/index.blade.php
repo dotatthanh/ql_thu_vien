@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container mt-5">
-        <h1 class="title-admin">Danh sách mượn sách</h1>
+        <h1 class="title-admin">Danh sách mượn trả sách</h1>
     </div>
 
     <div class="container mt-5">
@@ -66,15 +66,13 @@
                                     </li>
                                 @endif
                                 @if ($item->status == 2)
-                                    {{-- @can('Trả sách') --}}
-                                        <li class="list-inline-item px">
-                                            <form method="post" action="{{ route('book_loans.return_book', $item->id) }}">
-                                                @csrf
+                                    <li class="list-inline-item px">
+                                        <form method="post" action="{{ route('book_loans.return_book', $item->id) }}">
+                                            @csrf
 
-                                                <button type="submit" class="btn btn-success text-white">Trả sách</button>
-                                            </form>
-                                        </li>
-                                    {{-- @endcan --}}
+                                            <button type="submit" class="btn btn-success text-white">Trả sách</button>
+                                        </form>
+                                    </li>
                                 @endif
                             </ul>
                         </td>

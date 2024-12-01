@@ -25,27 +25,6 @@ class PermissionController extends Controller
         return view("admin.permission.index", $viewData);
     }
 
-    public function create() {
-        $roles = Role::get();
-        return view('admin.permission.create')->with('roles', $roles);
-    }
-
-    public function store(Request $request) {
-        try {
-            $this->validate($request, [
-                'name'=>'required|max:40',
-            ]);
-            
-            $data = $request->all();
-            $permission = Permission::create([
-                'name' => $data['name']
-            ]);
-            return redirect()->route('admin.permission.index')->with('alert-success', 'Tạo quyền thành công!');
-        } catch (Exception $e) {
-            return redirect()->back()->with('alert-danger', 'Tạo quyền thất bại!');
-        }
-    }
-
     public function edit($id) {
         $permission = Permission::findOrFail($id);
 

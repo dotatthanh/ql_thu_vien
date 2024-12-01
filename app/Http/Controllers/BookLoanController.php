@@ -44,7 +44,7 @@ class BookLoanController extends Controller
     public function create()
     {
         $customers = Customer::all();
-        $books = Book::all();
+        $books = Book::where('amount', '>', 0)->get();
         $data = [
             'customers' => $customers,
             'books' => $books,

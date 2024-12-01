@@ -22,7 +22,6 @@
     </div>
 
     <div class="container mt-5">
-        <a href="{{ route('admin.permission.create') }}" class="btn btn-success">Thêm quyền</a>
         <form action="{{ route('admin.permission.index') }}" method="GET" class="row mt-3">
             <div class="col-3">
                 <input type="text" name="key" placeholder="Tên quyền" class="form-control w-100" value="{{ request()->key }}">

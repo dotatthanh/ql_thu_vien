@@ -70,12 +70,12 @@
                                 </td>
                                 <td>{{ date('d/m/Y', strtotime($role->created_at)) }}</td>
                                 <td>
-                                    <a href="{{ route('admin.role.edit', $role->id) }}" class="btn btn-warning w-25 text-white pull-left" style="margin-right: 3px;">
+                                    <a href="{{ route('admin.role.edit', $role->id) }}" class="btn btn-warning text-white pull-left" style="margin-right: 3px;">
                                         <span>Sửa</span>
                                     </a>
                                     @if (!($role->name == 'admin'))
                                         <a href="{{ route('admin.role.destroy', $role->id) }}">
-                                            <button class="btn btn-danger w-25">
+                                            <button class="btn btn-danger">
                                                 <span>Xóa</span>
                                             </button>
                                         </a>
